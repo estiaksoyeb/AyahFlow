@@ -1,28 +1,46 @@
 # AyahFlow
 
-A Quran reading app designed to make daily Quran reading simple and consistent.
+**প্রতিদিন অল্প করে, ধারাবাহিকভাবে কুরআন পড়ার একটি ফ্রি অ্যাপ।**
 
-## Download
+AyahFlow বাংলা ভাষাভাষীদের জন্য তৈরি একটি ফ্রি কুরআন অ্যাপ, যা আপনাকে প্রতিদিন অল্প করে কুরআন পড়ার অভ্যাস গড়তে সাহায্য করবে। পাতা উল্টানো বা লাইন খোঁজার ঝামেলা ছাড়াই এতে স্ক্রিনজুড়ে এক বারে একটি করে আয়াত দেখা যায়—উপরে সোয়াইপ করলেই আসে পরের আয়াত। আপনার প্রতিদিনের লক্ষ্য, রিমাইন্ডার এবং শেষ কতটুকু পড়েছিলেন তার হিসাব অ্যাপটি নিজেই মনে রাখে। কোনো বিজ্ঞাপন নেই, অ্যাকাউন্ট খোলার ঝামেলা নেই, আর ইন্টারনেট ছাড়া অফলাইনেও চলে।
 
-Get the latest Android release from the [Releases](https://github.com/estiaksoyeb/AyahFlow/releases) page.
-
-## Features
-
-- Read Quran translations in Bengali.
-- Optional Arabic and English translations.
-- Daily reading goals and progress tracking.
-- Reading session history and bookmarks.
-- Daily reading reminders.
-- Share ayahs as images or text.
-
-## Updates
-
-New versions will be published on the [GitHub Releases](https://github.com/estiaksoyeb/AyahFlow/releases) page.
-
-## Website
-
-The project website will be added to this repository in the future.
+<p align="center">
+  <a href="https://estiaksoyeb.github.io/AyahFlow/">
+    <img alt="AyahFlow" src="https://img.shields.io/badge/AyahFlow-ওয়েবসাইট-044638?style=for-the-badge" />
+  </a>
+  <a href="https://github.com/estiaksoyeb/AyahFlow/releases/latest">
+    <img alt="সর্বশেষ সংস্করণ" src="https://img.shields.io/github/v/release/estiaksoyeb/AyahFlow?style=for-the-badge&label=সর্বশেষ" />
+  </a>
+  <img alt="Android" src="https://img.shields.io/badge/Android-8.0+-044638?style=for-the-badge&logo=android&logoColor=white" />
+</p>
 
 ---
 
-Made with care for Quran readers.
+## ডাউনলোড
+
+[**সর্বশেষ APK ডাউনলোড করুন →**](https://github.com/estiaksoyeb/AyahFlow/releases/latest/download/app-release.apk)
+
+নতুন সংস্করণগুলো [Releases](../../releases) পেজে প্রকাশিত হয়।
+
+## বৈশিষ্ট্য
+
+- **এক বারে একটি আয়াত।** পুরো স্ক্রিনে একটি করে আয়াত, উপরে সোয়াইপ করলেই পরের আয়াত।
+- **যেখানে থেমেছিলেন, সেখান থেকেই।** অ্যাপ আপনার শেষ অবস্থান মনে রাখে।
+- **প্রতিদিনের লক্ষ্য।** দিনে ১০, ২০ বা ৩০ আয়াতের লক্ষ্য ঠিক করুন, অগ্রগতি দেখুন।
+- **নিয়মিত রিমাইন্ডার।** আপনার সুবিধা মতো সময়ে ছোট্ট একটি নোটিফিকেশন।
+- **বুকমার্ক ও ক্যাটাগরি।** প্রিয় আয়াত গুছিয়ে রাখুন।
+- **প্রয়োজনীয় সব সুবিধা।** সূরা খোঁজা, অনুবাদের টীকা, শেষ পঠিত, শেয়ার—সব একসাথে।
+- **সম্পূর্ণ বাংলা ইন্টারফেস।** চাইলে আরবি ও ইংরেজি অনুবাদও সাথে।
+- **ফ্রি, বিজ্ঞাপনমুক্ত, অফলাইনেও চলে।** অ্যাকাউন্ট খোলার দরকার নেই।
+
+## ওয়েবসাইট
+
+প্রজেক্টের ওয়েবসাইট (ইন্টার্যাক্টিভ প্রিভিউসহ): **https://estiaksoyeb.github.io/AyahFlow/**
+
+## প্রকল্পের অবস্থা
+
+এই রিপোজিটরি **শুধু ডিস্ট্রিবিউশনের জন্য**। অ্যাপটির সোর্স কোড পাবলিক নয়। বাগ রিপোর্ট বা পরামর্শের জন্য [Issues](../../issues) ব্যবহার করুন।
+
+---
+
+<sub>Made with care for Quran readers.</sub>
