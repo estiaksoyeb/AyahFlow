@@ -27,14 +27,14 @@ try {
 }
 
 const features = [
-  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`, title: 'একবারে একটি আয়াত', body: 'প্রতিটি স্ক্রিনে একটি আয়াত। উপরে সোয়াইপ করলেই পরের আয়াত। পাতা উল্টানো বা খোঁজাখুঁজি নেই।' },
-  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>`, title: 'পড়ার ধারাবাহিকতা', body: 'অ্যাপ আপনার শেষ অবস্থান মনে রাখে। যেখানে থেমেছিলেন, ঠিক সেখান থেকেই আবার শুরু।' },
-  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`, title: 'দৈনিক লক্ষ্য', body: 'প্রতিদিন ১০, ২০ বা ৩০ আয়াতের লক্ষ্য ঠিক করুন। আজকের অগ্রগতি আর খতম শেষ হওয়ার আনুমানিক সময় দেখুন।' },
-  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>`, title: 'দৈনিক রিমাইন্ডার', body: 'দিনের নির্দিষ্ট সময়ে ছোট একটি নোটিফিকেশন, সাথে আপনার সর্বশেষ অবস্থান।' },
-  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`, title: 'বুকমার্ক ও ক্যাটাগরি', body: 'প্রিয় আয়াত সংরক্ষণ করুন, ক্যাটাগরি অনুযায়ী সাজান।' },
-  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`, title: 'সহায়ক সব টুল', body: 'সার্চ, সূরা নির্বাচক, টীকা ও ব্যাখ্যা, শেষ পঠিত — সব একই জায়গায়।' },
-  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`, title: 'বাংলা অনুবাদ', body: 'সম্পূর্ণ বাংলা ইন্টারফেস। চাইলে আরবি ও ইংরেজি অনুবাদও সাথে দেখুন।' },
-  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>`, title: 'ছবি হিসেবে শেয়ার', body: 'যেকোনো আয়াত সুন্দর ছবি বা টেক্সট হিসেবে শেয়ার করুন।' },
+  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`, title: 'স্ক্রিনজুড়ে একটিই আয়াত', body: 'পুরো স্ক্রিনে একটি করে আয়াত দেখায়। উপরে সোয়াইপ করলেই পরের আয়াতে চলে যাবেন। পাতা উল্টানো বা লাইন হারিয়ে ফেলার ভয় নেই।' },
+  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>`, title: 'যেখানে থেমেছিলেন, সেখান থেকেই', body: 'আপনি কতটুকু পড়েছেন, অ্যাপ তা ঠিক মনে রাখে—হুট করে স্ক্রল করে গেলে তা পড়া হিসেবে ধরে না। তাই পরদিন ঠিক যেখান থেকে শেষ করেছিলেন, সেখান থেকেই শুরু করতে পারবেন।' },
+  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`, title: 'প্রতিদিনের ছোট লক্ষ্য', body: 'দিনে ১০, ২০ বা ৩০টি আয়াত পড়ার লক্ষ্য ঠিক করে নিন। আজ কতটুকু পড়লেন আর এই গতিতে পড়লে কবে নাগাদ খতম শেষ হবে, তা সহজেই দেখতে পাবেন।' },
+  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>`, title: 'নিয়মিত রিমাইন্ডার', body: 'আপনার সুবিধা মতো সময়ে ছোট্ট একটি নোটিফিকেশন মনে করিয়ে দেবে আজকের পড়ার কথা—ঠিক যেখান থেকে আপনি থেমেছিলেন।' },
+  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`, title: 'বুকমার্ক ও ক্যাটাগরি', body: 'মনে ধরে যাওয়া আয়াতগুলো বুকমার্ক করে রাখুন, আর নিজের মতো ক্যাটাগরি বানিয়ে গুছিয়ে রাখুন।' },
+  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`, title: 'প্রয়োজনীয় সব সুবিধা', body: 'যেকোনো সূরা বা আয়াত খোঁজা, সূরার তালিকা, অনুবাদের টীকা ও ব্যাখ্যা—প্রয়োজনীয় সবই হাতের কাছে পাবেন।' },
+  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`, title: 'সহজ বাংলা ইন্টারফেস', body: 'পুরো অ্যাপটি বাংলায় সাজানো। বাংলা অনুবাদের পাশাপাশি চাইলে মূল আরবি এবং ইংরেজি অনুবাদও একসাথে রাখতে পারেন।' },
+  { icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>`, title: 'ছবি হিসেবে শেয়ার', body: 'যেকোনো আয়াত সুন্দর ছবির কার্ড বা টেক্সট হিসেবে প্রিয়জনদের সাথে শেয়ার করুন।' },
 ];
 ---
 <Layout>
@@ -43,14 +43,14 @@ const features = [
     <div class="bn">
       <span class="inline-block rounded-full bg-primary-container px-3 py-1 text-xs font-bold text-on-primary-container">বাংলা অনুবাদসহ · Android</span>
       <h1 class="mt-5 text-4xl font-bold leading-tight md:text-5xl">
-        প্রতিদিন <span class="text-emerald-ink">একটি আয়াত</span>।<br/>নিয়মিত, ক্রমানুসারে।
+        এক বারে <span class="text-emerald-ink">একটি আয়াত</span>।<br/>প্রতিদিন, অল্প করে।
       </h1>
       <p class="mt-5 max-w-[52ch] text-lg text-on-variant">
-        উপরে সোয়াইপ করলেই পরের আয়াত। পাতা উল্টানো নেই, খোঁজাখুঁজি নেই। অল্প করে, প্রতিদিন — এই ছোট অভ্যাসটাই এখানে সবচেয়ে জরুরি।
+        উপরে সোয়াইপ করলেই পরের আয়াত। পাতা উল্টানো বা খোঁজাখুঁজির ঝামেলা নেই। তাড়াহুড়ো না করে, প্রতিদিন একটু একটু করে কুরআন পড়ার অভ্যাস গড়ে তুলুন।
       </p>
       <div class="mt-8 flex flex-wrap items-center gap-4">
         <a href={release.url} class="bn rounded-xl bg-emerald-ink px-6 py-3 font-bold text-white no-underline shadow hover:opacity-90">
-          সর্বশেষ APK ডাউনলোড{release.sizeMb ? ` · ${release.sizeMb}MB` : ''}
+          APK ডাউনলোড করুন{release.sizeMb ? ` · ${release.sizeMb}MB` : ''}
         </a>
         <a href="#features" class="bn rounded-xl border border-outline-soft px-6 py-3 font-semibold text-on-surface no-underline hover:bg-variant/60">কেন AyahFlow?</a>
       </div>
@@ -58,15 +58,15 @@ const features = [
     </div>
     <div id="preview" class="scroll-mt-24">
       <AyahDemo />
-      <p class="mt-4 text-center text-sm text-on-variant">এটি অ্যাপের আসল পাঠ-স্ক্রিনের একটি জীবন্ত প্রিভিউ — স্ক্রল করে দেখুন।</p>
+      <p class="bn mt-4 text-center text-sm text-on-variant">অ্যাপের ভেতরের স্ক্রিনটি দেখতে ঠিক এমনই—স্ক্রল করে নিজেই দেখুন।</p>
     </div>
   </section>
 
   <!-- FEATURES -->
   <section id="features" class="scroll-mt-24 border-t border-outline-soft/55 bg-surface/40 py-20">
     <div class="bn mx-auto max-w-6xl px-6">
-      <h2 class="text-3xl font-bold md:text-4xl">যা যা আছে</h2>
-      <p class="mt-3 max-w-[60ch] text-on-variant">ছোট ছোট ব্যবহারিক সুবিধা, যাতে প্রতিদিনের পাঠটি সহজ আর টেকসই হয়।</p>
+      <h2 class="text-3xl font-bold md:text-4xl">যা যা থাকছে</h2>
+      <p class="mt-3 max-w-[60ch] text-on-variant">প্রতিদিনের কুরআন পড়াটা যেন সহজ ও নিয়মিত হয়, তার জন্য ছোট কিছু সুবিধা।</p>
       <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {features.map((f) => (
           <div class="rounded-3xl border border-outline-soft/60 bg-surface p-6 shadow-sm transition hover:shadow-md">
@@ -85,9 +85,9 @@ const features = [
       <h2 class="text-3xl font-bold md:text-4xl">কীভাবে কাজ করে</h2>
       <div class="mt-12 grid gap-8 md:grid-cols-3">
         {[
-          { n: '১', t: 'লক্ষ্য বাছুন', d: 'প্রতিদিন ১০, ২০ বা ৩০ আয়াত — যেটা আপনার জন্য টেকসই।' },
-          { n: '২', t: 'উপরে সোয়াইপ করুন', d: 'প্রতিটি আয়াত পড়ে উপরে সোয়াইপ করলেই পরের আয়াত।' },
-          { n: '৩', t: 'নিয়মিত থাকুন', d: 'রিমাইন্ডার আর ধারাবাহিকতা আপনার অভ্যাস ধরে রাখবে।' },
+          { n: '১', t: 'লক্ষ্য ঠিক করুন', d: 'দিনে ১০, ২০ বা ৩০টি আয়াত—আপনার রুটিনের সাথে যেটা সহজে মানায়, সেটাই বেছে নিন।' },
+          { n: '২', t: 'উপরে সোয়াইপ করুন', d: 'মনোযোগ দিয়ে একটি আয়াত পড়ুন, এরপর উপরে সোয়াইপ করে পরের আয়াতে যান।' },
+          { n: '৩', t: 'অভ্যাস ধরে রাখুন', d: 'প্রতিদিনের রিমাইন্ডার আর পড়ার হিসাব আপনাকে নিয়মিত থাকতে সাহায্য করবে।' },
         ].map((s) => (
           <div>
             <div class="grid h-12 w-12 place-items-center rounded-2xl bg-emerald-ink text-lg font-bold text-white">{s.n}</div>
@@ -103,7 +103,7 @@ const features = [
   <section class="mx-auto max-w-6xl px-6 pb-4">
     <div class="bn rounded-[32px] bg-emerald-ink px-8 py-14 text-center text-white md:px-16">
       <h2 class="text-3xl font-bold md:text-4xl">আজই শুরু করুন</h2>
-      <p class="mx-auto mt-3 max-w-[52ch] text-white/85">নতুন সংস্করণ GitHub Releases পেজে প্রকাশিত হয়। APK নামিয়ে সরাসরি ইনস্টল করুন।</p>
+      <p class="mx-auto mt-3 max-w-[52ch] text-white/85">অ্যাপটির সর্বশেষ সংস্করণ পাবেন আমাদের GitHub Releases পেজে। সরাসরি APK ডাউনলোড করে ইনস্টল করে নিন।</p>
       <a href={release.url} class="bn mt-8 inline-block rounded-xl bg-white px-7 py-3 font-bold text-emerald-ink no-underline hover:opacity-90">
         {release.version ? `AyahFlow ${release.version} ডাউনলোড করুন` : 'সর্বশেষ APK ডাউনলোড'}
       </a>

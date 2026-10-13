@@ -3,8 +3,8 @@ import '../styles/global.css';
 
 interface Props { title?: string; description?: string; }
 const {
-  title = 'AyahFlow — প্রতিদিন এক আয়াত',
-  description = 'একবারে একটি আয়াত। উপরে সোয়াইপ করে পরের আয়াত। প্রতিদিন কুরআন পড়ার সহজ অভ্যাস।',
+  title = 'AyahFlow — প্রতিদিন অল্প করে কুরআন',
+  description = 'AyahFlow বাংলা ভাষাভাষীদের জন্য তৈরি একটি ফ্রি কুরআন অ্যাপ, যা আপনাকে প্রতিদিন অল্প করে কুরআন পড়ার অভ্যাস গড়তে সাহায্য করবে। পাতা উল্টানো বা লাইন খোঁজার ঝামেলা ছাড়াই এতে স্ক্রিনজুড়ে এক বারে একটি করে আয়াত দেখা যায়—উপরে সোয়াইপ করলেই আসে পরের আয়াত। আপনার প্রতিদিনের লক্ষ্য, রিমাইন্ডার এবং শেষ কতটুকু পড়েছিলেন তার হিসাব অ্যাপটি নিজেই মনে রাখে। কোনো বিজ্ঞাপন নেই, অ্যাকাউন্ট খোলার ঝামেলা নেই, আর ইন্টারনেট ছাড়া অফলাইনেও চলে।',
 } = Astro.props;
 
 const GH = 'https://github.com/estiaksoyeb/AyahFlow';
@@ -33,7 +33,7 @@ const RELEASES = GH + '/releases';
           <span>AyahFlow</span>
         </a>
         <nav class="bn flex items-center gap-5 text-[15px]">
-          <a href="#features" class="text-on-variant hover:text-emerald-ink no-underline">বৈশিষ্ট্য</a>
+          <a href="#features" class="text-on-variant hover:text-emerald-ink no-underline">কী কী আছে</a>
           <a href="#preview" class="text-on-variant hover:text-emerald-ink no-underline">প্রিভিউ</a>
           <a href={RELEASES} class="text-on-variant hover:text-emerald-ink no-underline">ডাউনলোড</a>
         </nav>
@@ -46,10 +46,10 @@ const RELEASES = GH + '/releases';
       <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-6 px-6">
         <div>
           <strong class="text-on-surface">AyahFlow</strong>
-          <p class="bn mt-1.5 max-w-[44ch]">প্রতিদিন অল্প করে, নিয়মিত, ক্রমানুসারে কুরআন পড়ার জন্য একটি ফ্রি অ্যাপ।</p>
+          <p class="bn mt-1.5 max-w-[44ch]">প্রতিদিন অল্প করে, ধারাবাহিকভাবে কুরআন পড়ার জন্য একটি ফ্রি অ্যাপ।</p>
         </div>
         <div class="bn flex items-center gap-[18px]">
-          <a href={RELEASES} class="text-on-variant hover:text-emerald-ink no-underline">সংস্করণসমূহ</a>
+          <a href={RELEASES} class="text-on-variant hover:text-emerald-ink no-underline">সব সংস্করণ</a>
           <a href={GH} class="text-on-variant/70 hover:text-emerald-ink no-underline text-xs">GitHub</a>
         </div>
       </div>
