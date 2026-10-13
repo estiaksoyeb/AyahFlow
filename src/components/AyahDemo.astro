@@ -1,0 +1,100 @@
+---
+// Phone bezel wrapping the standalone reader demo (/demo.html) in an iframe.
+// - Desktop: tap-to-interact for 6s (no scroll trap, page stays scrollable).
+// - Mobile (touch): pointer-events permanently off; autoplay shows the swipe.
+// - Pauses the demo when offscreen via postMessage.
+---
+<div class="demo-wrap">
+  <div class="phone">
+    <div class="bezel">
+      <div class="notch"></div>
+      <iframe src="/demo.html" title="AyahFlow reader preview" loading="lazy" data-frame></iframe>
+      <div class="touch-shield" data-shield>
+        <span>ছুঁয়ে দেখুন</span>
+      </div>
+      <div class="homebar"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .demo-wrap{display:flex;justify-content:center;position:relative}
+  .phone{
+    position:relative;flex:none;width:min(330px,86vw);
+    aspect-ratio:330/680;border-radius:46px;padding:12px;
+    background:linear-gradient(160deg,#2a2f2b,#0e120f);
+    box-shadow:0 0 0 2px #1c211d,0 0 0 5px #0a0d0b,
+      0 30px 80px -20px rgba(0,0,0,.55),0 10px 30px -10px rgba(0,0,0,.4);
+  }
+  .bezel{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#F9F7F2}
+  iframe{width:100%;height:100%;border:0;display:block;pointer-events:none}
+  .notch{position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:118px;height:26px;background:#0a0d0b;border-radius:0 0 16px 16px;z-index:20;pointer-events:none}
+  .homebar{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);
+    width:120px;height:4px;border-radius:2px;background:rgba(0,0,0,.35);z-index:20;pointer-events:none}
+
+  /* Neon glow */
+  .phone::before{
+    content:"";position:absolute;inset:-3px;border-radius:49px;z-index:-1;
+    background:linear-gradient(135deg,#2ECC71,#0F5132 30%,#C59B27 55%,#E5C158 75%,#2ECC71 100%);
+    filter:blur(18px);opacity:.55;animation:neonPulse 4s ease-in-out infinite;
+  }
+  .phone::after{
+    content:"";position:absolute;inset:-1px;border-radius:47px;z-index:-1;
+    background:linear-gradient(135deg,#2ECC71,#C59B27,#2ECC71);
+    filter:blur(6px);opacity:.4;animation:neonPulse 4s ease-in-out infinite reverse;
+  }
+  @keyframes neonPulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.75;transform:scale(1.015)}}
+
+  /* Desktop-only tap-to-interact shield */
+  .touch-shield{display:none;position:absolute;inset:0;z-index:18;cursor:pointer;
+    align-items:flex-end;justify-content:center;padding-bottom:14px;transition:opacity .25s}
+  .touch-shield span{background:rgba(0,0,0,.6);color:#fff;font-size:11px;
+    padding:5px 12px;border-radius:999px;font-family:'Kalpurush',sans-serif}
+  .touch-shield.hidden{opacity:0;pointer-events:none}
+  @media (hover:hover) and (pointer:fine){
+    .touch-shield{display:flex}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    .phone::before,.phone::after{animation:none}
+  }
+</style>
+
+<script>
+  // Desktop tap-to-interact; auto-disable after 6s idle.
+  const isTouch = matchMedia('(hover:none)').matches;
+  const shield = document.querySelector('[data-shield]');
+  const frame  = document.querySelector('[data-frame]');
+
+  if (shield && frame && !isTouch) {
+    let idle = null;
+    const activate = () => {
+      frame.style.pointerEvents = 'auto';
+      shield.classList.add('hidden');
+      clearTimeout(idle);
+      idle = setTimeout(() => {
+        frame.style.pointerEvents = 'none';
+        shield.classList.remove('hidden');
+      }, 6000);
+    };
+    shield.addEventListener('click', activate);
+    // re-arm when the frame leaves the viewport
+    new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) {
+        clearTimeout(idle);
+        frame.style.pointerEvents = 'none';
+        shield.classList.remove('hidden');
+      }
+    }), {threshold:0.15}).observe(frame);
+  }
+
+  // Pause demo when the frame scrolls offscreen.
+  const frameEl = document.querySelector('[data-frame]');
+  if (frameEl) {
+    new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) frameEl.contentWindow?.postMessage('ayahflow:pause','*');
+      else                    frameEl.contentWindow?.postMessage('ayahflow:play','*');
+    }), {threshold:0.25}).observe(frameEl);
+  }
+</script>

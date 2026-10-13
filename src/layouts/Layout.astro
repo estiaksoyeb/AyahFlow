@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+
+interface Props { title?: string; description?: string; }
+const {
+  title = 'AyahFlow — প্রতিদিন এক আয়াত',
+  description = 'একবারে একটি আয়াত। উপরে সোয়াইপ করে পরের আয়াত। প্রতিদিন কুরআন পড়ার সহজ অভ্যাস।',
+} = Astro.props;
+
+const GH = 'https://github.com/estiaksoyeb/AyahFlow';
+const RELEASES = GH + '/releases';
+---
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#121614" />
+  </head>
+  <body class="min-h-screen bg-bg text-on-surface font-sans">
+    <header class="sticky top-0 z-20 border-b border-outline-soft/55 bg-bg/80 backdrop-blur">
+      <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        <a href="/" class="flex shrink-0 items-center gap-2.5 font-bold text-lg text-on-surface no-underline">
+          <img src="/logo.png" alt="AyahFlow" width="32" height="32" class="h-8 w-8 rounded-[9px]" />
+          <span>AyahFlow</span>
+        </a>
+        <nav class="bn flex items-center gap-5 text-[15px]">
+          <a href="#features" class="text-on-variant hover:text-emerald-ink no-underline">বৈশিষ্ট্য</a>
+          <a href="#preview" class="text-on-variant hover:text-emerald-ink no-underline">প্রিভিউ</a>
+          <a href={RELEASES} class="text-on-variant hover:text-emerald-ink no-underline">ডাউনলোড</a>
+        </nav>
+      </div>
+    </header>
+
+    <main><slot /></main>
+
+    <footer class="mt-20 border-t border-outline-soft/55 py-9 text-sm text-on-variant">
+      <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-6 px-6">
+        <div>
+          <strong class="text-on-surface">AyahFlow</strong>
+          <p class="mt-1.5 max-w-[44ch]">প্রতিদিন অল্প করে, নিয়মিত, ক্রমানুসারে কুরআন পড়ার জন্য একটি অ্যাপ।</p>
+        </div>
+        <div class="flex items-center gap-[18px]">
+          <a href={GH} class="text-on-variant hover:text-emerald-ink no-underline">GitHub</a>
+          <a href={RELEASES} class="text-on-variant hover:text-emerald-ink no-underline">Releases</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

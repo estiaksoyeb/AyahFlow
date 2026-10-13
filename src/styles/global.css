@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@font-face{font-family:'Kalpurush';src:url('/fonts/kalpurush.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Amiri';src:url('/fonts/amiri.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Inter';src:url('/fonts/inter-regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Inter';src:url('/fonts/inter-semibold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Inter';src:url('/fonts/inter-bold.woff2') format('woff2');font-weight:700;font-display:swap}
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-bangla: 'Kalpurush', system-ui, -apple-system, sans-serif;
+  --font-arabic: 'Amiri', serif;
+
+  --color-emerald-ink: #044638;
+  --color-emerald-bright: #2ECC71;
+  --color-gold: #C59B27;
+  --color-gold-light: #E5C158;
+
+  --color-bg: #F9F7F2;
+  --color-surface: #FFFFFF;
+  --color-on-surface: #1B231D;
+  --color-variant: #EBE6DC;
+  --color-on-variant: #5A6358;
+  --color-outline-soft: #D5CEBF;
+  --color-primary-container: #D4EDDA;
+  --color-on-primary-container: #07301E;
+
+  --radius-card: 24px;
+}
+
+@media (prefers-color-scheme: dark){
+  @theme {
+    --color-emerald-ink: #2ECC71;
+    --color-gold: #E5C158;
+    --color-bg: #121614;
+    --color-surface: #1A201C;
+    --color-on-surface: #EDEFEA;
+    --color-variant: #252E28;
+    --color-on-variant: #A8B2A8;
+    --color-outline-soft: #38443C;
+    --color-primary-container: #0D3B29;
+    --color-on-primary-container: #A8F5C4;
+  }
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-bg);
+  color: var(--color-on-surface);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+/* Bengali text opt-in (inter mixed with Latin) */
+.bn { font-family: var(--font-bangla); }
