@@ -26,6 +26,7 @@ jobs:
       - run: npm ci
       - name: Build
         env:
+          DEPLOY_TARGET: gh-pages
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run build
       - uses: actions/upload-pages-artifact@v3
