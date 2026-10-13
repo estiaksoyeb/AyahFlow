@@ -5,6 +5,27 @@ import AyahDemo from '../components/AyahDemo.astro';
 const GH = 'https://github.com/estiaksoyeb/AyahFlow';
 const RELEASES = GH + '/releases';
 
+// Fetch the latest release at build time so the download button stays accurate.
+// Falls back to the stable "latest" URL if the API is unavailable.
+const STABLE_APK = GH + '/releases/latest/download/app-release.apk';
+let release = { url: STABLE_APK, version: null, sizeMb: null };
+try {
+  const res = await fetch('https://api.github.com/repos/estiaksoyeb/AyahFlow/releases/latest', {
+    headers: { 'Accept': 'application/vnd.github+json' },
+  });
+  if (res.ok) {
+    const data = await res.json();
+    const apk = data.assets?.find((a) => a.name.endsWith('.apk'));
+    if (apk) {
+      release.url = apk.browser_download_url;
+      release.version = data.tag_name;
+      release.sizeMb = (apk.size / (1024 * 1024)).toFixed(1);
+    }
+  }
+} catch (e) {
+  // Keep fallbacks
+}
+
 const features = [
   { icon: '📖', title: 'একবারে একটি আয়াত', body: 'প্রতিটি স্ক্রিনে একটি আয়াত। উপরে সোয়াইপ করলেই পরের আয়াত। পাতা উল্টানো বা খোঁজাখুঁজি নেই।' },
   { icon: '🔁', title: 'পড়ার ধারাবাহিকতা', body: 'অ্যাপ আপনার শেষ অবস্থান মনে রাখে। যেখানে থেমেছিলেন, ঠিক সেখান থেকেই আবার শুরু।' },
@@ -28,7 +49,9 @@ const features = [
         উপরে সোয়াইপ করলেই পরের আয়াত। পাতা উল্টানো নেই, খোঁজাখুঁজি নেই। অল্প করে, প্রতিদিন — এই ছোট অভ্যাসটাই এখানে সবচেয়ে জরুরি।
       </p>
       <div class="mt-8 flex flex-wrap items-center gap-4">
-        <a href={RELEASES} class="rounded-xl bg-emerald-ink px-6 py-3 font-bold text-white no-underline shadow hover:opacity-90">সর্বশেষ APK ডাউনলোড</a>
+        <a href={release.url} class="bn rounded-xl bg-emerald-ink px-6 py-3 font-bold text-white no-underline shadow hover:opacity-90">
+          সর্বশেষ APK ডাউনলোড{release.sizeMb ? ` · ${release.sizeMb}MB` : ''}
+        </a>
         <a href={GH} class="rounded-xl border border-outline-soft px-6 py-3 font-semibold text-on-surface no-underline hover:bg-variant/60">GitHub-এ দেখুন</a>
       </div>
       <p class="mt-4 text-sm text-on-variant">ওপেন সোর্স · বিজ্ঞাপনমুক্ত · কোনো অ্যাকাউন্ট লাগে না</p>
@@ -81,7 +104,9 @@ const features = [
     <div class="bn rounded-[32px] bg-emerald-ink px-8 py-14 text-center text-white md:px-16">
       <h2 class="text-3xl font-bold md:text-4xl">আজই শুরু করুন</h2>
       <p class="mx-auto mt-3 max-w-[52ch] text-white/85">নতুন সংস্করণ GitHub Releases পেজে প্রকাশিত হয়। APK নামিয়ে সরাসরি ইনস্টল করুন।</p>
-      <a href={RELEASES} class="mt-8 inline-block rounded-xl bg-white px-7 py-3 font-bold text-emerald-ink no-underline hover:opacity-90">Releases পেজে যান</a>
+      <a href={release.url} class="bn mt-8 inline-block rounded-xl bg-white px-7 py-3 font-bold text-emerald-ink no-underline hover:opacity-90">
+        {release.version ? `AyahFlow ${release.version} ডাউনলোড করুন` : 'সর্বশেষ APK ডাউনলোড'}
+      </a>
     </div>
   </section>
 </Layout>
