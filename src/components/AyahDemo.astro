@@ -1,14 +1,16 @@
 ---
+
 // Phone bezel wrapping the standalone reader demo (/demo.html) in an iframe.
 // - Desktop: tap-to-interact for 6s (no scroll trap, page stays scrollable).
 // - Mobile (touch): pointer-events permanently off; autoplay shows the swipe.
 // - Pauses the demo when offscreen via postMessage.
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <div class="demo-wrap">
   <div class="phone">
     <div class="bezel">
       <div class="notch"></div>
-      <iframe src="/demo.html" title="AyahFlow reader preview" loading="lazy" data-frame></iframe>
+      <iframe src={`${BASE}/demo.html`} title="AyahFlow reader preview" loading="lazy" data-frame></iframe>
       <div class="touch-shield" data-shield>
         <span>সোয়াইপ করে দেখুন</span>
       </div>

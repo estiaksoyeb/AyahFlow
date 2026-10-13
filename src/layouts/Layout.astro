@@ -7,6 +7,7 @@ const {
   description = 'AyahFlow বাংলা ভাষাভাষীদের জন্য তৈরি একটি ফ্রি কুরআন অ্যাপ, যা আপনাকে প্রতিদিন অল্প করে কুরআন পড়ার অভ্যাস গড়তে সাহায্য করবে। পাতা উল্টানো বা লাইন খোঁজার ঝামেলা ছাড়াই এতে স্ক্রিনজুড়ে এক বারে একটি করে আয়াত দেখা যায়—উপরে সোয়াইপ করলেই আসে পরের আয়াত। আপনার প্রতিদিনের লক্ষ্য, রিমাইন্ডার এবং শেষ কতটুকু পড়েছিলেন তার হিসাব অ্যাপটি নিজেই মনে রাখে। কোনো বিজ্ঞাপন নেই, অ্যাকাউন্ট খোলার ঝামেলা নেই, আর ইন্টারনেট ছাড়া অফলাইনেও চলে।',
 } = Astro.props;
 
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 const GH = 'https://github.com/estiaksoyeb/AyahFlow';
 const RELEASES = GH + '/releases';
 ---
@@ -16,8 +17,8 @@ const RELEASES = GH + '/releases';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href={`${BASE}/favicon.svg`} />
+    <link rel="icon" href={`${BASE}/favicon.ico`} />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
@@ -29,7 +30,7 @@ const RELEASES = GH + '/releases';
     <header class="sticky top-0 z-20 border-b border-outline-soft/55 bg-bg/80 backdrop-blur">
       <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <a href="/" class="flex shrink-0 items-center gap-2.5 font-bold text-lg text-on-surface no-underline">
-          <img src="/logo.png" alt="AyahFlow" width="32" height="32" class="h-8 w-8 rounded-[9px]" />
+          <img src={`${BASE}/logo.png`} alt="AyahFlow" width="32" height="32" class="h-8 w-8 rounded-[9px]" />
           <span>AyahFlow</span>
         </a>
         <nav class="bn hidden items-center gap-5 text-[15px] sm:flex">

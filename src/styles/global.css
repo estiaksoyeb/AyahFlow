@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source "../**/*.astro";
+@source "../../public/**/*.html";
 
 @font-face{font-family:'Kalpurush';src:url('/fonts/kalpurush.ttf') format('truetype');font-display:swap}
 @font-face{font-family:'Amiri';src:url('/fonts/amiri.ttf') format('truetype');font-display:swap}

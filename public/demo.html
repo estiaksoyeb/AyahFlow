@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>AyahFlow demo</title>
 <style>
-  @font-face{font-family:'Kalpurush';src:url('/fonts/kalpurush.ttf') format('truetype');font-display:swap}
-  @font-face{font-family:'Amiri';src:url('/fonts/amiri.ttf') format('truetype');font-display:swap}
+  @font-face{font-family:'Kalpurush';src:url('fonts/kalpurush.ttf') format('truetype');font-display:swap}
+  @font-face{font-family:'Amiri';src:url('fonts/amiri.ttf') format('truetype');font-display:swap}
   :root{
     --primary:#044638;--on-primary:#FFFFFF;--primary-container:#D4EDDA;--on-primary-container:#07301E;
     --secondary:#C59B27;--background:#F9F7F2;--surface:#FFFFFF;--on-surface:#1B231D;
@@ -125,7 +125,7 @@ function render(a,idx){
 
 (async () => {
   const pager=document.getElementById('pager');
-  const AYAHS=await (await fetch('/demo-data.json')).json();
+  const AYAHS=await (await fetch('demo-data.json')).json();
   for(let pass=0;pass<2;pass++) AYAHS.forEach((a,i)=>pager.appendChild(render(a,i)));
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
