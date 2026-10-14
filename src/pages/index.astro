@@ -9,21 +9,32 @@ const RELEASES = GH + '/releases';
 // Falls back to the stable "latest" URL if the API is unavailable.
 const STABLE_APK = GH + '/releases/latest/download/app-release.apk';
 let release = { url: STABLE_APK, version: null, sizeMb: null };
-try {
-  const res = await fetch('https://api.github.com/repos/estiaksoyeb/AyahFlow/releases/latest', {
-    headers: { 'Accept': 'application/vnd.github+json' },
-  });
-  if (res.ok) {
-    const data = await res.json();
-    const apk = data.assets?.find((a) => a.name.endsWith('.apk'));
-    if (apk) {
-      release.url = apk.browser_download_url;
-      release.version = data.tag_name;
-      release.sizeMb = (apk.size / (1024 * 1024)).toFixed(1);
+
+// If the workflow told us the tag (release-triggered build), trust it and skip the API.
+const envTag = process.env.RELEASE_TAG;
+if (envTag && envTag.startsWith('v')) {
+  release.version = envTag;
+  release.url = `${GH}/releases/download/${envTag}/app-release.apk`;
+}
+
+// Otherwise (push / manual), fetch from the API.
+if (!release.version) {
+  try {
+    const headers = { 'Accept': 'application/vnd.github+json' };
+    if (process.env.GITHUB_TOKEN) headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
+    const res = await fetch('https://api.github.com/repos/estiaksoyeb/AyahFlow/releases/latest', { headers });
+    if (res.ok) {
+      const data = await res.json();
+      const apk = data.assets?.find((a) => a.name.endsWith('.apk'));
+      if (apk) {
+        release.url = apk.browser_download_url;
+        release.version = data.tag_name;
+        release.sizeMb = (apk.size / (1024 * 1024)).toFixed(1);
+      }
     }
+  } catch (e) {
+    // Keep fallbacks
   }
-} catch (e) {
-  // Keep fallbacks
 }
 
 const features = [

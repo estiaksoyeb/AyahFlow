@@ -30,6 +30,7 @@ jobs:
         env:
           DEPLOY_TARGET: gh-pages
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
         run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
